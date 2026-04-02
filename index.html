@@ -408,30 +408,7 @@
             <div class="subtitle">专业维修资料查询系统</div>
         </div>
         
-        <div class="container">
-            <!-- 冰箱模块 -->
-            <div class="category-card" onclick="toggleCategory(this, 'fridge')">
-                <div class="category-header">
-                    <div class="category-title">
-                        <div class="category-icon fridge-icon">❄️</div>
-                        <span>冰箱资料库</span>
-                    </div>
-                    <span class="arrow">›</span>
-                </div>
-                <div class="brands-container" onclick="event.stopPropagation()">
-                    <div class="brands-grid">
-                        <button class="brand-btn active" onclick="selectBrand(this, 'fridge', 'TCL')">TCL</button>
-                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '三星')">三星</button>
-                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '雪琪')">雪琪</button>
-                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '双鹿')">双鹿</button>
-                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '荣事达')">荣事达</button>
-                    </div>
-                    <button style="margin-top: 15px; width: 100%; padding: 12px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;" onclick="enterBrandPage('fridge')">
-                        进入资料页面 →
-                    </button>
-                </div>
-            </div>
-            
+        <div class="container">    
             <!-- 洗衣机模块 -->
             <div class="category-card" onclick="toggleCategory(this, 'washer')">
                 <div class="category-header">
@@ -450,6 +427,29 @@
                         <button class="brand-btn" onclick="selectBrand(this, 'washer', 'LG')">LG</button>
                     </div>
                     <button style="margin-top: 15px; width: 100%; padding: 12px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;" onclick="enterBrandPage('washer')">
+                        进入资料页面 →
+                    </button>
+                </div>
+            </div>
+
+            <!-- 冰箱模块 -->
+            <div class="category-card" onclick="toggleCategory(this, 'fridge')">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon fridge-icon">❄️</div>
+                        <span>冰箱资料库</span>
+                    </div>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="brands-container" onclick="event.stopPropagation()">
+                    <div class="brands-grid">
+                        <button class="brand-btn active" onclick="selectBrand(this, 'fridge', 'TCL')">TCL</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '三星')">三星</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '雪琪')">雪琪</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '双鹿')">双鹿</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'fridge', '荣事达')">荣事达</button>
+                    </div>
+                    <button style="margin-top: 15px; width: 100%; padding: 12px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;" onclick="enterBrandPage('fridge')">
                         进入资料页面 →
                     </button>
                 </div>
@@ -488,6 +488,14 @@
             <button class="module-btn" onclick="openContentPage('error-code')">
                 <div class="module-icon">⚠️</div>
                 <div class="module-name">故障代码</div>
+            </button>
+            <button class="module-btn" onclick="openContentPage('sop')">
+                <div class="module-icon">📋</div>
+                <div class="module-name">故障排查SOP</div>
+            </button>
+            <button class="module-btn" onclick="openContentPage('gcms')">
+                <div class="module-icon">📋</div>
+                <div class="module-name">工厂模式</div>
             </button>
             <button class="module-btn" onclick="openContentPage('policy')">
                 <div class="module-icon">📋</div>
@@ -528,8 +536,10 @@
             'washer': {
                 'TCL': {
                     'manual': [
-                         { model: '滚筒洗衣机', fault: '烘干故障检测方法', link: 'Thttps://pan.tcl.com/s/bl1q198ITXU'},
+{ model: '滚筒洗衣机', fault: '烘干故障检测方法', link: 'https://pan.tcl.com/s/6ewgOtazRPI'},
 { model: '滚筒洗衣机', fault: '离合器故障判定方法', link: 'https://pan.tcl.com/s/DmQCJkxSTFE'},
+{ model: 'H120P9干衣机', fault: '维修手册', link: 'https://pan.tcl.com/s/1UNWAzERRus'},
+{ model: 'G120P9/T7RW', fault: '维修手册', link: 'https://pan.tcl.com/s/WaGd7naSQO0'},
 { model: 'G100T7R-HDIS、G100T7R-DIS、G120T7R-HDI、G120T7R-DI、G100T7R-HDI、G100T7R-DI', fault: '维修手册', link: 'https://pan.tcl.com/s/2tEEVufMQy8'},
 { model: 'G80F1-B、G80L120-B、G80L880-B', fault: '维修手册', link: 'https://pan.tcl.com/s/9S1wQOroTQQ'},
 { model: 'G80L130-B、G100L130-B', fault: '维修手册', link: 'https://pan.tcl.com/s/Yw4OozccQgo'},
@@ -720,39 +730,102 @@
 { model: '滚筒', fault: 'G100T7R-HDIS，G100T7R-DIS', part: '噪音/洗涤异响', link: 'https://pan.tcl.com/s/tUTw65MvQ90' }
                     ],
                     'error-code': [
-                        { code: 'E1', desc: '进水故障', link: 'https://pan.tcl.com/s/2tEEVufMQy8' },
-                        { code: 'E2', desc: '排水故障', link: 'https://pan.tcl.com/s/gB0ygBW6ST8' },
+                        { model: '滚筒', fault: 'E1', part: '进水超时', link: 'https://pan.tcl.com/s/OehL01RLQu4' },
+{ model: '滚筒', fault: 'E2', part: '排水超时', link: 'https://pan.tcl.com/s/V6zsGR8lRpI' },
+{ model: '滚筒', fault: 'E3', part: '门锁故障', link: 'https://pan.tcl.com/s/wMGj9BMSQXQ' },
+{ model: '滚筒', fault: 'E4', part: '溢水报警/水位传感器故障', link: 'https://pan.tcl.com/s/d3iysf81TUs' },
+{ model: '滚筒', fault: 'E5', part: '电机故障', link: 'https://pan.tcl.com/s/GA4DIFTRc0' },
+{ model: '滚筒', fault: 'E6', part: '加热管故障', link: 'https://pan.tcl.com/s/4VIczBTVc' },
+{ model: '滚筒', fault: 'E7-1', part: '上桶加热管传感器故障', link: 'https://pan.tcl.com/s/UCxMK6AKRv4' },
+{ model: '滚筒', fault: 'E8', part: '主板与变频器型号匹配错误', link: 'https://pan.tcl.com/s/8jCL1vgnQg0' },
+{ model: '滚筒', fault: 'E9', part: '主板与变频板通讯故障', link: 'https://pan.tcl.com/s/uSepE0gQQKM' },
+{ model: '滚筒', fault: 'E10', part: '变频板故障', link: 'https://pan.tcl.com/s/Rr7t7JSQROw' },
+{ model: '滚筒', fault: 'E13', part: '烘干风机故障', link: 'https://pan.tcl.com/s/WdbOhm9ESL4' },
+{ model: '滚筒', fault: 'E14', part: '烘干加热管故障', link: 'https://pan.tcl.com/s/LRhukbRxRPk' },
+{ model: '滚筒', fault: 'nSP', part: '不平衡故障(假性故障）', link: '/' },
+{ model: '滚筒', fault: 'UL', part: '电压低(假性故障）', link: '/' },
+{ model: '滚筒', fault: 'UH', part: '电压高(假性故障）', link: '/' },
+{ model: '滚筒', fault: 'FH', part: '清新模式(假性故障）', link: '/' },
+{ model: '滚筒', fault: 'EP', part: '旋钮指针未在对应位置(假性故障）', link: '/' },
+{ model: '滚筒', fault: 'Hot', part: '桶内温度过高(假性故障）', link: '/' },
+{ model: '滚筒', fault: 'AUT', part: '表示开启AI智慧洗功能（无故障）', link: '/' },
+{ model: '干衣机', fault: 'FUL', part: '排水浮子开关异常', link: '/' },
+{ model: '干衣机', fault: '过滤器指示灯闪烁', part: '提示清洁过滤网', link: '/' },
+{ model: '干衣机', fault: '蒸汽指示灯闪烁', part: '蒸汽储水箱无水', link: '/' },
+{ model: '干衣机', fault: 'E21', part: '蒸汽发生器加热异常', link: '/' },
+{ model: '干衣机', fault: 'dC', part: '门锁故障', link: '/' },
+{ model: '干衣机', fault: 'E41', part: '压缩机温度传感器故障', link: '/' },
+{ model: '干衣机', fault: 'E42', part: '风道温度传感器故障', link: '/' },
+{ model: '干衣机', fault: 'E44', part: '蒸汽发生器温度传感器故障', link: '/' },
+{ model: '干衣机', fault: 'E51', part: '干衣机变频电机故障', link: '/' },
+{ model: '干衣机', fault: 'E52', part: '变频压缩机故障', link: '/' },
+{ model: '干衣机', fault: 'E61', part: '干衣机电机变频板故障', link: '/' },
+{ model: '干衣机', fault: 'E62', part: '干衣机压缩机变频板故障', link: '/' },
+{ model: '干衣机', fault: 'E71', part: '主板与显示板通讯故障', link: '/' },
+{ model: '干衣机', fault: 'E72', part: '显示板与电机变频通讯故障', link: '/' },
+{ model: '干衣机', fault: 'E73', part: '显示板与压缩机变频通讯故障', link: '/' },
+{ model: '波轮', fault: 'E1', part: '进水超时', link: 'https://pan.tcl.com/s/YAGjxUUHT7w' },
+{ model: '波轮', fault: 'E2', part: '排水超时', link: 'https://pan.tcl.com/s/VNVjrd4SQi0' },
+{ model: '波轮', fault: 'E3', part: '门开盖故障', link: 'https://pan.tcl.com/s/u8Br20hQIg' },
+{ model: '波轮', fault: 'E4', part: '水位检测故障', link: 'https://pan.tcl.com/s/CatWWS1DSq0' },
+{ model: '波轮', fault: 'E8', part: '不平衡报警', link: 'https://pan.tcl.com/s/iVGpfDZ8TQw' },
+{ model: '波轮', fault: 'E9', part: '变频通讯故障', link: '/' },
+{ model: '波轮', fault: 'EA', part: '驱动板故障', link: '/' },
+{ model: '波轮', fault: 'En', part: '通讯故障', link: '/' },
+{ model: '波轮', fault: 'EE', part: '水回收提醒/新风功能', link: '/' },
+{ model: '波轮', fault: 'CL', part: '童锁提示', link: '/' }
                     ],
-                    'manual-book': [
-                          { model: 'G120T6-B', desc: '冬天报E6处理方案', link: 'https://pan.tcl.com/s/tGZVry0sRRY' },
-                        { model: 'G70L120-B', desc: '冬天报E7处理方案', link: 'https://pan.tcl.com/s/6Ecwg7HSEk' },
-                        { model: 'T10套装', desc: '冬天报E71处理方案', link: 'https://pan.tcl.com/s/NwL5f9s8SXs' },
-                        { model: '通用工具', desc: '维修工具清单', link: 'https://pan.tcl.com/s/tools001' }
+                    'sop': [
+{ model: '滚筒', fault: '不显示/显示异常', link: 'https://pan.tcl.com/s/XJQArO5Q4Y' },
+{ model: '滚筒', fault: '触摸按键失灵', link: 'https://pan.tcl.com/s/7JCLKRRQGo' },
+{ model: '滚筒', fault: '连不上网', link: 'https://pan.tcl.com/s/bDBlR585RU' },
+{ model: '滚筒', fault: '不脱水/脱水异常', link: 'https://pan.tcl.com/s/cZeDAKSKR3I' },
+{ model: '滚筒', fault: '洗涤剂盒漏水', link: 'https://pan.tcl.com/s/5eM1fLywSaM' },
+{ model: '滚筒', fault: '噪音振动', link: 'https://pan.tcl.com/s/mwmu05CsQ0k' },
+{ model: '滚筒', fault: '不通电', link: 'https://pan.tcl.com/s/d3z0bEczRZg' },
+{ model: '滚筒', fault: '洗涤不加热/加热异常', link: 'https://pan.tcl.com/s/TX79qZu8TbI' },
+{ model: '滚筒', fault: '不洗涤/洗涤异常', link: 'https://pan.tcl.com/s/RMtrRWT9E' },
+{ model: '滚筒', fault: '不烘干/烘不干', link: 'https://pan.tcl.com/s/cLY4RB4R5o' },
+{ model: '滚筒', fault: 'E0', link: 'https://pan.tcl.com/s/65RMsz0oSgk' },
+{ model: '滚筒', fault: 'E1', link: 'https://pan.tcl.com/s/OehL01RLQu4' },
+{ model: '滚筒', fault: 'E2', link: 'https://pan.tcl.com/s/V6zsGR8lRpI' },
+{ model: '滚筒', fault: 'E3', link: 'https://pan.tcl.com/s/wMGj9BMSQXQ' },
+{ model: '滚筒', fault: 'E4', link: 'https://pan.tcl.com/s/d3iysf81TUs' },
+{ model: '滚筒', fault: 'E5', link: 'https://pan.tcl.com/s/GA4DIFTRc0' },
+{ model: '滚筒', fault: 'E6', link: 'https://pan.tcl.com/s/4VIczBTVc' },
+{ model: '滚筒', fault: 'E7', link: 'https://pan.tcl.com/s/UCxMK6AKRv4' },
+{ model: '滚筒', fault: 'E8', link: 'https://pan.tcl.com/s/8jCL1vgnQg0' },
+{ model: '滚筒', fault: 'E9', link: 'https://pan.tcl.com/s/uSepE0gQQKM' },
+{ model: '滚筒', fault: 'E10', link: 'https://pan.tcl.com/s/Rr7t7JSQROw' },
+{ model: '滚筒', fault: 'E11', link: 'https://pan.tcl.com/s/DL1YDZUFSiE' },
+{ model: '滚筒', fault: 'E12', link: 'https://pan.tcl.com/s/ja7mCQA8Rro' },
+{ model: '滚筒', fault: 'E13', link: 'https://pan.tcl.com/s/WdbOhm9ESL4' },
+{ model: '滚筒', fault: 'E14', link: 'https://pan.tcl.com/s/LRhukbRxRPk' },
+{ model: '滚筒', fault: 'E15', link: 'https://pan.tcl.com/s/irGVPkHtQTM' },
+{ model: '滚筒', fault: 'E21', link: 'https://pan.tcl.com/s/9djIYu7WR8I' },
+{ model: '波轮', fault: '噪音/振动', link: 'https://pan.tcl.com/s/lPqSyfJ0SfQ' },
+{ model: '波轮', fault: '不洗涤/洗涤异常', link: 'https://pan.tcl.com/s/rMvIGcbeSBc' },
+{ model: '波轮', fault: '不脱水/脱水异常', link: 'https://pan.tcl.com/s/4xqvmtF1SxU' },
+{ model: '波轮', fault: 'E1', link: 'https://pan.tcl.com/s/YAGjxUUHT7w' },
+{ model: '波轮', fault: 'E2', link: 'https://pan.tcl.com/s/VNVjrd4SQi0' },
+{ model: '波轮', fault: 'E3', link: 'https://pan.tcl.com/s/u8Br20hQIg' },
+{ model: '波轮', fault: 'E4', link: 'https://pan.tcl.com/s/CatWWS1DSq0' },
+{ model: '波轮', fault: 'E8', link: 'https://pan.tcl.com/s/iVGpfDZ8TQw' }
                     ],
-                    'policy': [
-                        { model: 'G100T7R-HDIS', link: 'https://pan.tcl.com/s/2tEEVufMQy8' },
-                        { model: 'G100V100-HD', link: 'https://pan.tcl.com/s/gB0ygBW6ST8' },
-                        { model: 'G80L130-B', link: 'https://pan.tcl.com/s/Yw4OozccQgo' },
-                        { model: 'XQG65-Q100', link: 'https://pan.tcl.com/s/JgEXYvbdTtQ' },
-                        { model: 'G100T7-DI、G100T7-HDI', link: 'https://pan.tcl.com/s/kRCkVW8qQEQ' },
-                        { model: 'G100P2-DI', link: 'https://pan.tcl.com/s/Ea5USQRQi4' }
-                    ],
-                    'other': [
-                        { model: 'G120T6-B', desc: '冬天报E6处理方案', link: 'https://pan.tcl.com/s/tGZVry0sRRY' },
-                        { model: 'G70L120-B', desc: '冬天报E7处理方案', link: 'https://pan.tcl.com/s/6Ecwg7HSEk' },
-                        { model: 'T10套装', desc: '冬天报E71处理方案', link: 'https://pan.tcl.com/s/NwL5f9s8SXs' },
-                        { model: '通用工具', desc: '维修工具清单', link: 'https://pan.tcl.com/s/tools001' }
-                    ]
+                    'gcms': [{ model: '洗衣机工厂模式', link: 'https://pan.tcl.com/s/Ecb3j6JhTJg' }],
+                    'manual-book': [],
+                    'policy': [{ model: '冰洗保修期限/政策', link: 'https://pan.tcl.com/s/skLHM1XQSU' }],
+                    'other': []
                 },
                 '石头科技': {
-                    'manual': [{ model: 'H1系列', link: '#' }],
-                    'tech-case': [{ model: '示例型号', fault: '示例故障', part: '示例部件', link: '#' }],
-                    'video': [{ category: '洗烘一体机', name: '安装指导', link: '#' }],
-                    'repair-case': [{ model: '示例型号', fault: '示例故障', link: '#' }],
-                    'error-code': [{ code: 'E1', desc: '示例故障', link: '#' }],
-                    'manual-book': [{ model: 'H1系列', link: '#' }],
-                    'policy': [{ model: 'H1系列', link: '#' }],
-                    'other': [{ model: '示例', desc: '示例说明', link: '#' }]
+                    'manual': [{ model: '全品类', fault: '石头维修手册', link: 'https://pan.tcl.com/s/pHW5Ek9YTPA'},],
+                    'tech-case': [],
+                    'video': [{ model: '安装/维修', fault: '全品类', part: '安装维修/视频', link: 'https://kdocs.cn/l/cbmdCtqQR7yr' }],
+                    'repair-case': [{ model: '全品类', fault: '石头', part: '维修手册', link: 'https://pan.tcl.com/s/VAZ5Rra1Rck' }],
+                    'error-code': [],
+                    'manual-book': [],
+                    'policy': [],
+                    'other': []
                 },
                 '追觅科技': {
                     'manual': [ { model: '全品类', fault: '追觅维修指引汇总', link: 'https://pan.tcl.com/s/pHW5Ek9YTPA'},                     
@@ -838,6 +911,7 @@
             'fridge': {
                 'TCL': {
                     'manual': [
+{ model: '风冷冰箱', fault: '风冷冰箱电控维修', link: 'https://pan.tcl.com/s/QvKVXfNhRxs'},
 { model: '风冷冰箱', fault: '风冷冰箱常见检修思路', link: 'https://pan.tcl.com/s/TUX4bNnqRwY'},
 { model: 'BCD-118KA9、R528P12-UQ、R460P12-UQ、R456T9-UQ、R521T9-UQ', fault: '维修手册', link: 'https://pan.tcl.com/s/4G2AMV6sRL0'},
 { model: 'R518V3-S、BCD-520WPJD', fault: '对开门冰箱冷藏结冰检修指引', link: 'https://pan.tcl.com/s/Ua0zdCGvSMs'},
@@ -987,10 +1061,27 @@
 { model: '风冷冰箱', fault: 'R515T15-UQBS、R515P16-UQBS、R515P16K-UQBS', part: '显示屏故障（不亮/常亮/屏闪）', link: 'https://pan.tcl.com/s/bUx35O5QCA' },
 { model: '风冷冰箱', fault: 'R190V7-B', part: '操作类故障（触摸失灵/WIFI连不上）', link: 'https://pan.tcl.com/s/pDvMUBW3SII' }
 ],
-                    'error-code': [{ code: 'E1', desc: '冷藏室传感器故障', link: '#' }],
+                    'error-code': [],
                     'manual-book': [{ model: 'BCD-520WPJD', link: '#' }],
-                    'policy': [{ model: 'BCD-520WPJD', link: '#' }],
-                    'other': [{ model: '通用', desc: '冰箱保养指南', link: '#' }]
+                    'sop': [
+{ model: '风冷', fault: '整机不制冷/制冷异常', link: 'https://pan.tcl.com/s/LsPv4gmUTsQ' },
+{ model: '风冷', fault: '不停机', link: 'https://pan.tcl.com/s/lHE2wN14TEw' },
+{ model: '风冷', fault: '冷冻室结霜/结冰异常', link: 'https://pan.tcl.com/s/UILTQi28Q1c' },
+{ model: '风冷', fault: '冷藏不制冷/制冷异常', link: 'https://pan.tcl.com/s/k6yssrIbQUc' },
+{ model: '风冷', fault: '显示不良', link: 'https://pan.tcl.com/s/QME9UORTL4' },
+{ model: '风冷', fault: '漏水', link: 'https://pan.tcl.com/s/g1W1YuQxQ' },
+{ model: '风冷', fault: '频繁启动', link: 'https://pan.tcl.com/s/77Tp98ehQhE' },
+{ model: '风冷', fault: '噪音', link: 'https://pan.tcl.com/s/Ir0G9hMgTcA' },
+{ model: '风冷', fault: '漏电', link: 'https://pan.tcl.com/s/NRn3IAsTtc' },
+{ model: '风冷', fault: '不通电/通电不工作', link: 'https://pan.tcl.com/s/STWMe3yrTtE' },
+{ model: '风冷', fault: '冷藏灯常不亮', link: 'https://pan.tcl.com/s/0AVW81iWSqo' },
+{ model: '风冷', fault: '连不上网', link: 'https://pan.tcl.com/s/OnCq8gAkTCw' },
+{ model: '风冷', fault: '滴滴报警', link: 'https://pan.tcl.com/s/KlGjJZb4QLM' },
+{ model: '风冷', fault: '触摸失灵', link: 'https://pan.tcl.com/s/8GuKybeORUU' }
+],
+                    'gcms': [{ model: '冰箱工厂模式汇总', link: 'https://pan.tcl.com/s/hzUVIf2CTjo' }],
+                    'policy': [{ model: '冰洗保修期限/政策', link: 'https://pan.tcl.com/s/skLHM1XQSU' }],
+                    'other': []
                 },
                 '三星': {
                     'manual': [{ model: 'RS系列', link: '#' }],
@@ -1042,6 +1133,8 @@
             'tech-case': '技术案例',
             'repair-case': '维修案例',
             'manual-book': '说明书',
+            'sop': '故障排查SOP',
+            'gcms': '工厂模式',
             'error-code': '故障代码',
             'policy': '服务政策',
             'other': '其它资料'
@@ -1149,7 +1242,7 @@
  			tableHTML += '<th style="width:30%">型号</th><th style="width:50%">说明</th><th style="width:20%">查询</th>';
                     break;
                 case 'policy':
-                    tableHTML += '<th style="width:70%">产品型号</th><th style="width:30%">查询</th>';
+                    tableHTML += '<th style="width:70%">说明</th><th style="width:30%">查询</th>';
                     break;
                 case 'tech-case':
                     tableHTML += '<th style="width:25%">型号</th><th style="width:30%">故障现象</th><th style="width:25%">技改部件</th><th style="width:20%">查询</th>';
@@ -1158,10 +1251,16 @@
                     tableHTML += '<th style="width:20%">分类</th><th style="width:25%">型号</th><th style="width:35%">说明</th><th style="width:20%">查询</th>';
                     break;
                 case 'repair-case':
-                   tableHTML += '<th style="width:20%">分类</th><th style="width:30%">型号</th><th style="width:20%">故障现象</th><th style="width:20%">查询</th>';
+                   tableHTML += '<th style="width:20%">分类</th><th style="width:20%">型号</th><th style="width:40%">故障现象</th><th style="width:20%">查询</th>';
+                    break;
+                case 'sop':
+                   tableHTML += '<th style="width:25%">分类</th><th style="width:55%">故障现象</th><th style="width:20%">查询</th>';
                     break;
                 case 'error-code':
-                    tableHTML += '<th style="width:70%">故障代码</th><th style="width:30%">查询</th>';
+                    tableHTML += '<th style="width:20%">分类</th><th style="width:20%">代码</th><th style="width:20%">含义</th><th style="width:20%">查询</th>';
+                    break;
+                case 'gcms':
+                    tableHTML += '<th style="width:70%">说明</th><th style="width:30%">查询</th>';
                     break;
                 case 'other':
                     tableHTML += '<th style="width:25%">型号</th><th style="width:45%">说明</th><th style="width:30%">查询</th>';
@@ -1207,8 +1306,19 @@
                         tableHTML += `<td>${item.part}</td>`;
                         tableHTML += `<td><button class="query-btn" onclick="openLink('${item.link}')">查询</button></td>`;
                         break;
+                    case 'sop':
+                        tableHTML += `<td class="model-cell">${item.model}</td>`;
+                        tableHTML += `<td>${item.fault}</td>`;
+                        tableHTML += `<td><button class="query-btn" onclick="openLink('${item.link}')">查询</button></td>`;
+                        break;
                     case 'error-code':
-                        tableHTML += `<td><strong>${item.code}</strong> - ${item.desc || ''}</td>`;
+                        tableHTML += `<td class="model-cell">${item.model}</td>`;
+                        tableHTML += `<td>${item.fault}</td>`;
+                        tableHTML += `<td>${item.part}</td>`;
+                        tableHTML += `<td><button class="query-btn" onclick="openLink('${item.link}')">查询</button></td>`;
+                        break;
+                    case 'gcms':
+                        tableHTML += `<td class="model-cell">${item.model}</td>`;
                         tableHTML += `<td><button class="query-btn" onclick="openLink('${item.link}')">查询</button></td>`;
                         break;
                     case 'other':
