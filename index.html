@@ -454,6 +454,70 @@
                     </button>
                 </div>
             </div>
+			
+            <!-- 智屏模块 -->
+            <div class="category-card" onclick="toggleCategory(this, 'TV')">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon TV-icon">📺</div>
+                        <span>智屏资料库</span>
+                    </div>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="brands-container" onclick="event.stopPropagation()">
+                    <div class="brands-grid">
+                        <button class="brand-btn active" onclick="selectBrand(this, 'TV', 'TCL')">TCL</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'TV', '三星')">三星</button>
+                        <button class="brand-btn" onclick="selectBrand(this, TV', '华为')">华为</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'TV', '小米')">小米</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'TV', '荣耀')">荣耀</button>
+                    </div>
+                    <button style="margin-top: 15px; width: 100%; padding: 12px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;" onclick="enterBrandPage('TV')">
+                        进入资料页面 →
+                    </button>
+                </div>
+            </div>
+
+            <!-- 空调模块 -->
+            <div class="category-card" onclick="toggleCategory(this, 'AC')">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon AC-icon">🧊</div>
+                        <span>空调资料库</span>
+                    </div>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="brands-container" onclick="event.stopPropagation()">
+                    <div class="brands-grid">
+                        <button class="brand-btn active" onclick="selectBrand(this, 'AC', 'TCL')">TCL</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'AC', '追觅科技')">追觅科技</button>
+                    </div>
+                    <button style="margin-top: 15px; width: 100%; padding: 12px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;" onclick="enterBrandPage('AC')">
+                        进入资料页面 →
+                    </button>
+                </div>
+            </div>
+
+            <!-- 门锁模块 -->
+            <div class="category-card" onclick="toggleCategory(this, 'CIOT')">
+                <div class="category-header">
+                    <div class="category-title">
+                        <div class="category-icon CIOT-icon">🔒</div>
+                        <span>门锁资料库</span>
+                    </div>
+                    <span class="arrow">›</span>
+                </div>
+                <div class="brands-container" onclick="event.stopPropagation()">
+                    <div class="brands-grid">
+                        <button class="brand-btn active" onclick="selectBrand(this, 'CIOT', 'TCL')">TCL</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'CIOT', '鹿客')">鹿客</button>
+                        <button class="brand-btn" onclick="selectBrand(this, 'CIOT', '华为')">华为</button>
+                    </div>
+                    <button style="margin-top: 15px; width: 100%; padding: 12px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer;" onclick="enterBrandPage('CIOT')">
+                        进入资料页面 →
+                    </button>
+                </div>
+            </div>		
         </div>
     </div>
 
